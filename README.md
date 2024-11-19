@@ -79,14 +79,8 @@ The following dependencies are required for this project:
    ```
 ### Step 2: Install Dependencies
 
-#### For Backend:
-  ```bash
-  cd backend
-  npm install
-  ```
 #### For Frontend:
  ```bash
- cd ../frontend
  npm install
  ```
 
@@ -101,11 +95,7 @@ Create a `.env` file in the `backend` directory with the following:
 Create a `.env` file in the `frontend` directory (if required) for API configurations.
 
 ### Step 4: Start the Servers
-#### Backend:
- ```bash
- cd backend
- npm start
- ```
+
 #### Frontend:
  ```bash
  cd ./frontend
