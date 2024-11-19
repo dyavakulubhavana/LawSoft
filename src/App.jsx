@@ -17,6 +17,7 @@ import Login from './features/auth/components/Login';
 import { Slideshow } from './features/slideshow/Slideshow';
 import Page404 from './features/errorpage/Page404';
 import AboutUs from './features/about/AboutUs';
+import { ClientDashboard } from './pages/ClientDashboard';
 
 const router = createBrowserRouter([
   {
@@ -43,6 +44,10 @@ const router = createBrowserRouter([
   {
     path: "/about",
     element: <AboutUs></AboutUs>
+  },
+  {
+    path: "/clientdashboard",
+    element: <ClientDashboard></ClientDashboard>
   }
 ])
 
