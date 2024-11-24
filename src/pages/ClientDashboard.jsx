@@ -3,13 +3,14 @@ import ClientNavbar from '../features/navbar/ClientNavbar';
 import { Footer } from '../features/footer/Footer';
 import { CardFeature } from '../features/card/CardFeature';
 import CalendarComponent from '../features/calender/CalenderComponent';
+import { Link } from 'react-router-dom';
 
 
 const navigation = [
-  { iconName: 'user', title: 'Search Lawyer', bgcolor: 'bg-red-400' },
-  { iconName: 'file', title: 'Petition Filing', bgcolor: 'bg-orange-400' },
-  { iconName: 'document', title: 'Submit Document', bgcolor: 'bg-yellow-400' },
-  { iconName: 'libary', title: 'Case Libary', bgcolor: 'bg-pink-400' },
+  { iconName: 'user', title: 'Search Lawyer', bgcolor: 'bg-red-400', link: '/searchlawyer'},
+  { iconName: 'file', title: 'Petition Filing', bgcolor: 'bg-orange-400', link: 'searchlawyer'},
+  { iconName: 'document', title: 'Submit Document', bgcolor: 'bg-yellow-400', link: 'searchlawyer'},
+  { iconName: 'libary', title: 'Case Libary', bgcolor: 'bg-pink-400', link: 'searchlawyer'},
 ]
 
 
@@ -19,9 +20,11 @@ export const ClientDashboard = () => {
     <>
       <ClientNavbar></ClientNavbar>
       <div className='p-20 flex gap-8 justify-evenly bg-slate-200'>
-        
+
         {navigation.map((item) => (
-          <CardFeature iconName={item.iconName} title={item.title} bgcolor={item.bgcolor}></CardFeature>
+          <Link to={item.link}>
+            <CardFeature iconName={item.iconName} title={item.title} bgcolor={item.bgcolor}></CardFeature>
+          </Link>
         ))}
 
       </div>

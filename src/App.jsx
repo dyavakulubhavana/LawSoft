@@ -18,6 +18,7 @@ import { Slideshow } from './features/slideshow/Slideshow';
 import Page404 from './features/errorpage/Page404';
 import AboutUs from './features/about/AboutUs';
 import { ClientDashboard } from './pages/ClientDashboard';
+import { SearchLawyerPage } from './pages/SearchLawyerPage';
 
 const router = createBrowserRouter([
   {
@@ -48,6 +49,10 @@ const router = createBrowserRouter([
   {
     path: "/clientdashboard",
     element: <ClientDashboard></ClientDashboard>
+  },
+  {
+    path: "/searchlawyer",
+    element: <SearchLawyerPage></SearchLawyerPage>
   }
 ])
 
