@@ -19,6 +19,8 @@ import Page404 from './features/errorpage/Page404';
 import AboutUs from './features/about/AboutUs';
 import { ClientDashboard } from './pages/ClientDashboard';
 import { SearchLawyerPage } from './pages/SearchLawyerPage';
+import { PetitionFilingPage } from './pages/PetitionFilingPage';
+
 
 const router = createBrowserRouter([
   {
@@ -53,6 +55,10 @@ const router = createBrowserRouter([
   {
     path: "/searchlawyer",
     element: <SearchLawyerPage></SearchLawyerPage>
+  },
+  {
+    path: "/petitionfiling",
+    element: <PetitionFilingPage></PetitionFilingPage>
   }
 ])
 
