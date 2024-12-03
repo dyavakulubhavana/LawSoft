@@ -1,5 +1,8 @@
 import React from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, Navigate } from 'react-router-dom';
+import { useForm } from "react-hook-form";
+import { useDispatch, useSelector } from 'react-redux';
+import { checkUserAsync, selectError, selectLoggedInUser } from '../authSlice';
 
 
 export default function Login() {
@@ -7,7 +10,15 @@ export default function Login() {
   const location = useLocation();
   const { userType } = location.state || {};
 
+  const { register, handleSubmit, reset, formState: { errors } } = useForm();
+  const user = useSelector(selectLoggedInUser);
+  const error = useSelector(selectError);
+  const dispatch = useDispatch();
+
   return (
+    <>
+    {/* if user exsist in loggedinuser, that mean logIn successFull then it will navigate to '/' */}
+    {user && <Navigate to='/clientdashboard' replace={true}></Navigate>}
     <div className="flex h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8 bg-slate-300">
       <div className="sm:mx-auto sm:w-full sm:max-w-sm">
         {/* link Icon to home page  */}
@@ -20,19 +31,40 @@ export default function Login() {
       </div>
 
       <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-        <form action="#" method="POST" className="space-y-6">
+        <form 
+        noValidate
+        onSubmit={handleSubmit(
+          userType === 'Client' ? 
+            (data)=>{
+            dispatch(checkUserAsync({mobileNo: data.mobileNo, password: data.password}))
+            console.log(data)
+            } :
+          userType === 'lawyer' ? 
+            console.log("lawyer dispatch")
+          :
+            console.log("MTS")
+          
+        )}
+        className="space-y-6">
           <div>
-            <label htmlFor="adhaar" className="block text-sm font-medium leading-6 text-gray-900 text-left">
-              Adhaar / Mobile No
+            <label htmlFor="mobileNo" className="block text-sm font-medium leading-6 text-gray-900 text-left">
+              Mobile No
             </label>
             <div className="mt-2">
-              <input
-                id="adhaar"
-                name="adhaar"
+            <input
+                id="mobileNo"
+                {...register("mobileNo", {
+                  required: "mobileNo no is requred",
+                  pattern: {
+                    value: /^(0|91)?[6-9][0-9]{9}$/g,
+                    message: "Enter a Valid Number"
+                  }
+                })}
                 type="number"
                 required
-                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
+                className="block p-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6 [appearance:textfield] [&::-webkit-outer-spin-button]:appearance-none [&::-webkit-inner-spin-button]:appearance-none"
               />
+              {errors.mobileNo && <p className='text-red-500 text-left'>{errors.mobileNo.message}</p>}
             </div>
           </div>
 
@@ -50,25 +82,25 @@ export default function Login() {
             <div className="mt-2">
               <input
                 id="password"
-                name="password"
+                {...register("password", {required:"Password is required"})}
                 type="password"
                 required
                 autoComplete="current-password"
                 className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
               />
+              {/* showing error massage from the store's state  */}
+              {error && <p className='text-red-500'>{error.message}</p>}
             </div>
           </div>
 
           <div>
-            {/* Dummy Link to simulation of login function working  */}
-            <Link to='/clientdashboard'>
+            
               <button
                 type="submit"
                 className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Log in
               </button>
-            </Link>
 
           </div>
         </form>
@@ -81,5 +113,6 @@ export default function Login() {
         </p>
       </div>
     </div>
+    </>
   )
 }

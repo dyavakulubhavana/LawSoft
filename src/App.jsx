@@ -20,7 +20,7 @@ import AboutUs from './features/about/AboutUs';
 import { ClientDashboard } from './pages/ClientDashboard';
 import { SearchLawyerPage } from './pages/SearchLawyerPage';
 import { PetitionFilingPage } from './pages/PetitionFilingPage';
-
+import { Protected } from './features/auth/components/Protected';
 
 const router = createBrowserRouter([
   {
@@ -41,24 +41,27 @@ const router = createBrowserRouter([
     element: <Login></Login>
   },
   {
-    path: "/slider",
-    element: <Slideshow></Slideshow>
-  },
-  {
     path: "/about",
     element: <AboutUs></AboutUs>
   },
   {
     path: "/clientdashboard",
-    element: <ClientDashboard></ClientDashboard>
+    element: 
+    <Protected>
+      <ClientDashboard></ClientDashboard>
+    </Protected>
   },
   {
     path: "/searchlawyer",
-    element: <SearchLawyerPage></SearchLawyerPage>
+    element: <Protected>
+      <SearchLawyerPage></SearchLawyerPage>
+    </Protected>
   },
   {
     path: "/petitionfiling",
-    element: <PetitionFilingPage></PetitionFilingPage>
+    element: <Protected>
+      <PetitionFilingPage></PetitionFilingPage>
+    </Protected>
   }
 ])
 
@@ -66,8 +69,8 @@ const router = createBrowserRouter([
 function App() {
   return (
     <div className="App">
-        {/* This is for React router, Expect this line clear all line inside of App class */}
-        <RouterProvider router={router} />
+      {/* This is for React router, Expect this line clear all line inside of App class */}
+      <RouterProvider router={router} />
     </div>
   );
 }
