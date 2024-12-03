@@ -1,0 +1,39 @@
+{
+  "users": [
+    {
+      "id": "38f1",
+      "data": {
+        "name": "Ased Ali Sekh",
+        "aadhaar": "893261335667",
+        "mobileNo": "7550924264",
+        "password": "Ased1234",
+        "confirmPassword": "Ased1234"
+      }
+    },
+    {
+      "id": "4908",
+      "name": "Ased Ali Sekh",
+      "aadhaar": "893261335667",
+      "mobileNo": "7550924264",
+      "password": "Ased1234",
+      "confirmPassword": "Ased1234"
+    },
+    {
+      "id": "c7a8",
+      "name": "Ased Ali Sekh",
+      "aadhaar": "893261335667",
+      "mobileNo": "7550924264",
+      "password": "Ased1234",
+      "confirmPassword": "Ased1234",
+      "address": []
+    },
+    {
+      "id": "8b4f",
+      "name": "Ased Ali Sekh",
+      "aadhaar": "893261335667",
+      "mobileNo": "7550924264",
+      "password": "Ased1234",
+      "confirmPassword": "Ased1234"
+    }
+  ]
+}

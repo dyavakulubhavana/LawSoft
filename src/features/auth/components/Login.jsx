@@ -1,9 +1,4 @@
 import React from 'react'
-import {
-  increment,
-  incrementAsync,
-  selectCount,
-} from '../authSlice';
 import { Link, useLocation } from 'react-router-dom'
 
 
