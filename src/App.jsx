@@ -21,6 +21,8 @@ import { ClientDashboard } from './pages/ClientDashboard';
 import { SearchLawyerPage } from './pages/SearchLawyerPage';
 import { PetitionFilingPage } from './pages/PetitionFilingPage';
 import { Protected } from './features/auth/components/Protected';
+import { DocumentSubmissionPage } from './pages/DocumentSubmissionPage';
+
 
 const router = createBrowserRouter([
   {
@@ -61,6 +63,12 @@ const router = createBrowserRouter([
     path: "/petitionfiling",
     element: <Protected>
       <PetitionFilingPage></PetitionFilingPage>
+    </Protected>
+  },
+  {
+    path: "/submit-document",
+    element: <Protected>
+      <DocumentSubmissionPage></DocumentSubmissionPage>
     </Protected>
   }
 ])

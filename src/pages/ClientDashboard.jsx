@@ -9,7 +9,7 @@ import { Link } from 'react-router-dom';
 const navigation = [
   { iconName: 'user', title: 'Search Lawyer', bgcolor: 'bg-red-400', link: '/searchlawyer'},
   { iconName: 'file', title: 'Petition Filing', bgcolor: 'bg-orange-400', link: '/petitionfiling'},
-  { iconName: 'document', title: 'Submit Document', bgcolor: 'bg-yellow-400', link: 'searchlawyer'},
+  { iconName: 'document', title: 'Submit Document', bgcolor: 'bg-yellow-400', link: '/submit-document'},
   { iconName: 'libary', title: 'Case Libary', bgcolor: 'bg-pink-400', link: 'searchlawyer'},
 ]
 

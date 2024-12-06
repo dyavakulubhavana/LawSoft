@@ -31,6 +31,14 @@
       "mobileNo": "9002943298",
       "password": "Ased1234",
       "confirmPassword": "Ased1234"
+    },
+    {
+      "id": "367b",
+      "name": "Ramananda Sil",
+      "aadhaar": "124578235689",
+      "mobileNo": "8001523361",
+      "password": "Ased1234",
+      "confirmPassword": "Ased1234"
     }
   ]
 }

@@ -945,18 +945,17 @@ export function PetitionFiling() {
           <label for="uploadPetition">Upload petition File(pdf format)</label>
           <label for='uploadDocument'>Upload Supporting File(pdf format)</label>
           <Button
-
             component="label"
             variant="outlined"
             name="uploadPetition"
             tabIndex={-1}
             startIcon={<CloudUploadIcon />}
           >
-            Upload Petition files
+            Upload Petition file
             <VisuallyHiddenInput
               type="file"
+              accept="application/pdf"
               onChange={(event) => console.log(event.target.files)}
-              multiple
             />
           </Button>
 
@@ -970,6 +969,7 @@ export function PetitionFiling() {
             Upload Documents
             <VisuallyHiddenInput
               type="file"
+              accept="application/pdf"
               onChange={(event) => console.log(event.target.files)}
               multiple
             />
