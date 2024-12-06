@@ -142,7 +142,7 @@ Welcome to the **LawSoft** project! This guide is designed to help team members 
 11. [Code Reviews and Merging](#code-reviews-and-merging)
 
 
----
+--- 
 
 ### Clone the Repository
 Before you start working, clone the repository to your local machine:
@@ -237,7 +237,7 @@ git pull origin main
 If there are any merge conflicts, Git will notify you. Follow Git instructions to resolve these conflicts and continue with your changes.
 
 
----
+----
 ### Code Reviews and Merging
 1. Once your pull request is submitted, team members will review your changes.
 2. Address any feedback provided.
