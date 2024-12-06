@@ -15,6 +15,22 @@
       "mobileNo": "9999999997",
       "password": "Ased1234",
       "confirmPassword": "Ased1234"
+    },
+    {
+      "id": "dd6e",
+      "name": "Mohor Singho",
+      "aadhaar": "575701012323",
+      "mobileNo": "6291922387",
+      "password": "Mnbv1234",
+      "confirmPassword": "Mnbv1234"
+    },
+    {
+      "id": "df62",
+      "name": "Sumit Kumar",
+      "aadhaar": "757500002123",
+      "mobileNo": "9002943298",
+      "password": "Ased1234",
+      "confirmPassword": "Ased1234"
     }
   ]
 }

@@ -121,36 +121,128 @@ Open your browser and visit: `http://localhost:5173`
 - Review case details and schedules.
 - Conduct secure hearings and manage case statuses.
 
-### Contributing
-We welcome contributions from the community! Follow these steps to contribute:
+## Contributing
+### Team Contribution Guide
 
-#### Step 1: Fork the Repository
-Click the **"Fork"** button on the repository page to create your copy.
+Welcome to the **LawSoft** project! This guide is designed to help team members contribute to the repository smoothly and efficiently. Please follow the steps outlined below for contributing to the project.
 
-#### Step 2: Clone Your Fork
+---
+
+### Table of Contents
+1. [Clone the Repository](#clone-the-repository)
+2. [Navigate to the Project Directory](#navigate-to-the-project-directory)
+3. [Install Dependencies](#install-dependencies)
+4. [Create a New Branch](#create-a-new-branch)
+5. [Branch Naming Conventions](#branch-naming-conventions)
+6. [Making Changes Locally](#making-changes-locally)
+7. [Push Changes to Remote](#push-changes-to-remote)
+8. [Create a Pull Request](#create-a-pull-request)
+9. [Pull Updates from Main](#pull-updates-from-main)
+10. [Resolve Merge Conflicts](#resolve-merge-conflicts)
+11. [Code Reviews and Merging](#code-reviews-and-merging)
+
+
+---
+
+### Clone the Repository
+Before you start working, clone the repository to your local machine:
 ```bash
-git clone https://github.com/AsedAliSekh/LawSoft.git
-cd lawsoft
+git clone https://github.com/Project-LawSoft/LawSoft.git
 ```
-#### Step 3: Create a Feature Branch
+
+---
+### Navigate to the Project Directory
+After cloning the repo, navigate to the project directory:
+
 ```bash
-git checkout -b feature/your-feature-name
+cd <project-directory>
 ```
-#### Step 4: Make Your Changes
-- Follow the coding standards and project structure.
-- Test your changes locally to ensure they work as expected.
-#### Step 5: Commit Your Changes
+
+###Install Dependencies
+If the project requires dependencies, run the following command to install them:
+
+```bash
+npm install
+```
+
+---
+### Create a New Branch
+It is important to create a new branch before making any changes to the codebase:
+
+```bash
+git checkout -b <branch-name>
+
+#### Example:
+
+git checkout -b feature-add-login
+```
+
+---
+### Branch Naming Conventions
+Follow these naming conventions for your branches:
+
+1. `feature-<feature-name>` - for new features.
+2. `fix-<issue-name>` - for bug fixes.
+3. `docs-<documentation-update>` - for documentation
+
+`Branch Type`	`Example Name`
+**New Feature**	`feature-add-login`
+**Bug Fix**	`fix-login-error`
+**Documentation Update**	`docs-update-readme`
+
+
+---
+### Making Changes Locally
+Make necessary changes or add new features to the codebase.
+After editing, stage the changes using the following command:
+
 ```bash
 git add .
-git commit -m "Add feature: [brief description of feature]"
+
+#### Commit your changes with a clear message:
+git commit -m "Give a clear and detailed commit massage"
 ```
-#### Step 6: Push Your Changes
+
+---
+### Push Changes to Remote
+Once you have committed your changes locally, push the branch to the remote repository:
+
 ```bash
-git push origin feature/your-feature-name
+git push origin <branch-name>
+
+#### Example:
+git push origin feature-add-login
 ```
-#### Step 7: Create a Pull Request
-- Navigate to the original repository and create a pull request.
-- Provide a detailed explanation of your changes.
+
+---
+### Create a Pull Request
+
+1. Navigate to the GitHub repository.
+2. Go to the Pull Requests section and click on New Pull Request.
+3. Select the base branch as main and compare branch as your working branch.
+4. Provide a description of your changes and submit the pull request.
+
+
+---
+### Pull Updates from Main
+Every Time before start working on the project run this comment to ensure you have the latest changes from the main branch, run the following:
+
+```bash
+git pull origin main
+```
+
+---
+### Resolve Merge Conflicts
+If there are any merge conflicts, Git will notify you. Follow Git instructions to resolve these conflicts and continue with your changes.
+
+
+---
+### Code Reviews and Merging
+1. Once your pull request is submitted, team members will review your changes.
+2. Address any feedback provided.
+3. Once approved, your pull request can be merged into the main branch.
+
+----
 
 ### Code of Conduct
 All contributors are expected to follow our Code of Conduct. Please ensure respectful and constructive interactions.
