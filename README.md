@@ -158,7 +158,8 @@ After cloning the repo, navigate to the project directory:
 cd <project-directory>
 ```
 
-###Install Dependencies
+---
+### Install Dependencies
 If the project requires dependencies, run the following command to install them:
 
 ```bash
@@ -174,21 +175,21 @@ git checkout -b <branch-name>
 
 #### Example:
 
-git checkout -b feature-add-login
+git checkout -b feature/add-login
 ```
 
 ---
 ### Branch Naming Conventions
 Follow these naming conventions for your branches:
 
-1. `feature-<feature-name>` - for new features.
-2. `fix-<issue-name>` - for bug fixes.
-3. `docs-<documentation-update>` - for documentation
+1. `feature/<feature-name>` - for new features.
+2. `fix/<issue-name>` - for bug fixes.
+3. `docs/<documentation-update>` - for documentation
 
-`Branch Type`	`Example Name`
-**New Feature**	`feature-add-login`
-**Bug Fix**	`fix-login-error`
-**Documentation Update**	`docs-update-readme`
+**Branch Type**	  **Example Name**
+- **New Feature**	`feature/add-login`
+- **Bug Fix**	`fix/login-error`
+- **Documentation Update**	`docs/update-readme`
 
 
 ---
@@ -211,7 +212,7 @@ Once you have committed your changes locally, push the branch to the remote repo
 git push origin <branch-name>
 
 #### Example:
-git push origin feature-add-login
+git push origin feature/add-login
 ```
 
 ---
