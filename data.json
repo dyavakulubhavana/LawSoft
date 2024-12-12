@@ -40,5 +40,15 @@
       "password": "Ased1234",
       "confirmPassword": "Ased1234"
     }
+  ],
+  "MTS": [
+    {
+      "id": "0012",
+      "name": "Mohor",
+      "aadhaar": "893261335667",
+      "mobileNo": "8001523361",
+      "password": "Ased1234",
+      "confirmPassword": "Ased1234"
+    }
   ]
 }

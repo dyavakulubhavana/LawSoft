@@ -22,6 +22,8 @@ import { SearchLawyerPage } from './pages/SearchLawyerPage';
 import { PetitionFilingPage } from './pages/PetitionFilingPage';
 import { Protected } from './features/auth/components/Protected';
 import { DocumentSubmissionPage } from './pages/DocumentSubmissionPage';
+import { MtsHomePage } from './pages/MtsHomePage';
+import { ProtectedMTS } from './features/auth/components/ProtectedMTS';
 
 
 const router = createBrowserRouter([
@@ -70,6 +72,13 @@ const router = createBrowserRouter([
     element: <Protected>
       <DocumentSubmissionPage></DocumentSubmissionPage>
     </Protected>
+  },
+  {
+    path: "/mts/home",
+    element: 
+    <ProtectedMTS>
+      <MtsHomePage></MtsHomePage>
+    </ProtectedMTS>
   }
 ])
 

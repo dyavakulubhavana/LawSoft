@@ -1,9 +1,10 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link, useLocation, Navigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from 'react-redux';
 import { createUserAsync, selectLoggedInUser } from '../authSlice';
-
+import VisibilityIcon from '@mui/icons-material/Visibility';
+import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
 export default function Signup() {
   // for differnt user role 
@@ -13,6 +14,19 @@ export default function Signup() {
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
   const dispatch = useDispatch();
   const user = useSelector(selectLoggedInUser);
+  // For Show And Hide Password 
+  const [password, setPassword] = useState("");
+  const [type, setType] = useState('password');
+  const [icon, setIcon] = useState(true);
+  const handleToggle = () => {
+    if (type === 'password') {
+      setIcon(true);
+      setType('text')
+    } else {
+      setIcon(false)
+      setType('password')
+    }
+  }
 
   return (
     <>
@@ -107,7 +121,7 @@ export default function Signup() {
                   Password
                 </label>
               </div>
-              <div className="mt-2">
+              <div className="mt-2 flex">
                 <input
                   id="password"
                   {...register("password",
@@ -118,13 +132,17 @@ export default function Signup() {
                         message: "- at least 8 characters \n - must contain at least 1 uppercase letter, 1 lowercase letter, and 1 number \n - Can contain special characters"
                       }
                     })}
-                  type="password"
-                  required
-                  autoComplete="current-password"
+                  type={type}
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
                   className="block p-2 w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
                 />
-                {errors.password && <p className='text-red-500 text-left'>{errors.password.message}</p>}
+                <span class="flex items-center -ml-10" onClick={handleToggle}>
+                  {icon ? <VisibilityIcon /> : <VisibilityOffIcon />}
+                </span>
+                
               </div>
+              {errors.password && <p className='text-red-500 text-left'>{errors.password.message}</p>}
 
               <div className="flex items-center justify-between mt-2">
                 <label htmlFor="confirmPassword" className="block text-sm font-medium leading-6 text-gray-900">

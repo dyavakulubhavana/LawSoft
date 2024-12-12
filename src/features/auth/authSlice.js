@@ -1,9 +1,10 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-import { checkUser, createUser } from './authAPI';
+import { checkMts, checkUser, createUser } from './authAPI';
 
 
 const initialState = {
   loggedInUser:null,
+  loggedInMTS: null,
   status: 'idle',
   error: null
 };
@@ -23,6 +24,16 @@ export const checkUserAsync = createAsyncThunk(
   'auth/checkuser',
   async (loginInfo) => {
     const response = await checkUser(loginInfo);
+    // The value we return becomes the `fulfilled` action payload
+    return response.data;
+  }
+);
+
+// LogIn Thunk for MTS || MTS
+export const checkMtsAsync = createAsyncThunk(
+  'auth/checkMts',
+  async (loginInfo) => {
+    const response = await checkMts(loginInfo);
     // The value we return becomes the `fulfilled` action payload
     return response.data;
   }
@@ -59,6 +70,18 @@ export const authSlice = createSlice({
       .addCase(checkUserAsync.rejected, (state, action) => {
         state.status = 'idle';
         state.error = action.error;
+      })
+      .addCase(checkMtsAsync.pending, (state) => {
+        state.status = 'loading';
+      })
+      .addCase(checkMtsAsync.fulfilled, (state, action) => {
+        state.status = 'idle';
+        state.loggedInMTS = action.payload;
+        alert("Looged In")
+      })
+      .addCase(checkMtsAsync.rejected, (state, action) => {
+        state.status = 'idle';
+        state.error = action.error;
       });
   },
 });
@@ -67,5 +90,7 @@ export const authSlice = createSlice({
 
 
 export const selectLoggedInUser = (state) => state.auth.loggedInUser;
+export const selectLoggedInMTS = (state) => state.auth.loggedInMTS;
+
 export const selectError = (state) => state.auth.error;
 export default authSlice.reducer;
