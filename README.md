@@ -204,6 +204,13 @@ git add .
 git commit -m "Give a clear and detailed commit massage"
 ```
 
+**Example Of Standerd Commit**
+```bash
+#Feature ADD:--- MTS Home, Lawyer Register Form with from control. MTS LogIn API & ProtectedMTS.
+#Fix:----> MTS & Lawyer userType LogIn page Fix.
+#TODO:---->  Lawyer Add From API and Slice create and Dispatch
+```
+
 ---
 ### Push Changes to Remote
 Once you have committed your changes locally, push the branch to the remote repository:
