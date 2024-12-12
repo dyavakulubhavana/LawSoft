@@ -203,8 +203,7 @@ git add .
 #### Commit your changes with a clear message:
 git commit -m "Give a clear and detailed commit massage"
 ```
-
-**Example Of Standerd Commit**
+**Example Of Standerd Commit massage**
 ```bash
 #Feature ADD:--- MTS Home, Lawyer Register Form with from control. MTS LogIn API & ProtectedMTS.
 #Fix:----> MTS & Lawyer userType LogIn page Fix.
