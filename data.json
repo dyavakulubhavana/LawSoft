@@ -50,5 +50,73 @@
       "password": "Ased1234",
       "confirmPassword": "Ased1234"
     }
+  ],
+  "lawyers": [
+    {
+      "id": "82bf",
+      "name": "Ased ALI",
+      "mobileNo": "7550924264",
+      "email": "admin@gmail.com",
+      "regNo": "45465496496",
+      "practiceCourt": "District Court",
+      "PeferDomain": "Civil",
+      "practiceCity": "kolkata",
+      "practiceYear": "3",
+      "password": "Ased1234",
+      "about": "fdfgrstgh",
+      "photo": {
+        "0": {}
+      },
+      "address": {
+        "streetAddress": "Sahebganj, Dinhatat, Coochbehar, West Bengal",
+        "city": "Kolkata",
+        "homeState": "West Bengal",
+        "pinCode": "736176"
+      }
+    },
+    {
+      "id": "9f73",
+      "name": "Ased Ali",
+      "mobileNo": "7550924264",
+      "email": "admin@gmail.com",
+      "regNo": "1234565465",
+      "practiceCourt": "High Court",
+      "PeferDomain": "Criminal",
+      "practiceCity": "kolkata",
+      "practiceYear": "3",
+      "password": "Ased1234",
+      "about": "fgdgfdyhjftjy",
+      "photo": {
+        "0": {}
+      },
+      "address": {
+        "streetAddress": "Sahebganj, Dinhatat, Coochbehar, West Bengal",
+        "city": "Kolkata",
+        "homeState": "West Bengal",
+        "pinCode": "736176"
+      }
+    },
+    {
+      "id": "d49c",
+      "name": "Ased Ali",
+      "mobileNo": "7550924264",
+      "email": "admin@gmail.com",
+      "regNo": "1234565465",
+      "practiceCourt": "High Court",
+      "PeferDomain": "Criminal",
+      "practiceCity": "kolkata",
+      "practiceYear": "3",
+      "password": "Ased1234",
+      "about": "eewtwette",
+      "photo": {
+        "0": {}
+      },
+      "address": {
+        "streetAddress": "Sahebganj, Dinhatat, Coochbehar, West Bengal",
+        "city": "Kolkata",
+        "homeState": "West Bengal",
+        "pinCode": "736176"
+      }
+    }
   ]
 }
