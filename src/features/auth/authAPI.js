@@ -56,3 +56,37 @@ export function checkMts(loginInfo) {
     }
   });
 }
+
+
+// API for Cheacking Lawyer is valid for login or not || LAWYER
+export function checkLawyer(loginInfo) {
+  return new Promise(async (resolve, reject) => {
+    const mobileNo = loginInfo.mobileNo;
+    const password = loginInfo.password;
+
+    const response = await fetch('http://localhost:8080/lawyers?mobileNo=' +mobileNo);
+    const data = await response.json();
+    // check MobileNo and password for log in demo in frontend 
+    if(data.length){
+      if(password === data[0].password){
+        resolve({data: data[0]})
+      }else{
+        reject({message: "Wrong Crediential"})
+      }
+    }else{
+      reject({message: "Wrong Crediential"})
+    }
+  });
+}
+
+
+
+// LogOut API it will erease user login data from client side & from server also 
+export function logOut() {
+  return new Promise(async (resolve) => {
+    
+
+    // TODO: on server erease sesson data and logIn info
+    resolve({ data: "logout success" })
+  });
+}

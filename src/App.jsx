@@ -24,6 +24,8 @@ import { Protected } from './features/auth/components/Protected';
 import { DocumentSubmissionPage } from './pages/DocumentSubmissionPage';
 import { MtsHomePage } from './pages/MtsHomePage';
 import { ProtectedMTS } from './features/auth/components/ProtectedMTS';
+import { LawyerHomePage } from './pages/lawyer/LawyerHomePage';
+import { ProtectedLawyer } from './features/auth/components/ProtectedLawyer';
 
 
 const router = createBrowserRouter([
@@ -50,10 +52,10 @@ const router = createBrowserRouter([
   },
   {
     path: "/clientdashboard",
-    element: 
-    <Protected>
-      <ClientDashboard></ClientDashboard>
-    </Protected>
+    element:
+      <Protected>
+        <ClientDashboard></ClientDashboard>
+      </Protected>
   },
   {
     path: "/searchlawyer",
@@ -75,10 +77,18 @@ const router = createBrowserRouter([
   },
   {
     path: "/mts/home",
-    element: 
-    <ProtectedMTS>
-      <MtsHomePage></MtsHomePage>
-    </ProtectedMTS>
+    element:
+      <ProtectedMTS>
+        <MtsHomePage></MtsHomePage>
+      </ProtectedMTS>
+  }
+  ,
+  {
+    path: "/lawyer/home",
+    element:
+      <ProtectedLawyer>
+        <LawyerHomePage></LawyerHomePage>
+      </ProtectedLawyer>
   }
 ])
 

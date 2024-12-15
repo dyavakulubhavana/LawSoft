@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link, useLocation, Navigate } from 'react-router-dom';
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from 'react-redux';
-import { checkMtsAsync, checkUserAsync, selectError, selectLoggedInMTS, selectLoggedInUser } from '../authSlice';
+import { checkLawyerAsync, checkMtsAsync, checkUserAsync, selectError, selectLoggedInLawyer, selectLoggedInMTS, selectLoggedInUser } from '../authSlice';
 import VisibilityIcon from '@mui/icons-material/Visibility';
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff';
 
@@ -15,6 +15,7 @@ export default function Login() {
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
   const user = useSelector(selectLoggedInUser);
   const MTS = useSelector(selectLoggedInMTS);
+  const lawyer = useSelector(selectLoggedInLawyer);
   const error = useSelector(selectError);
   const dispatch = useDispatch();
 
@@ -37,6 +38,8 @@ export default function Login() {
       {/* if user exsist in loggedinuser, that mean logIn successFull then it will navigate to '/' */}
       {user && <Navigate to='/clientdashboard' replace={true}></Navigate>}
       {MTS && <Navigate to='/mts/home' replace={true}></Navigate>}
+      {lawyer && <Navigate to='/lawyer/home' replace={true}></Navigate>}
+
       <div className="flex h-screen flex-1 flex-col justify-center px-6 py-12 lg:px-8 bg-slate-300">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           {/* link Icon to home page  */}
@@ -58,7 +61,8 @@ export default function Login() {
                   console.log(data);
                 } 
                 else if (userType === 'lawyer') {
-                  alert("lawyer log")
+                  // dispatch lawyer logIn API thunk
+                  dispatch(checkLawyerAsync({ mobileNo: data.mobileNo, password: data.password }))
                 } 
                 else {
                   // Here I Have to despatch MTS logIn 

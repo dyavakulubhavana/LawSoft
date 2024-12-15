@@ -1,5 +1,6 @@
 import { Disclosure, DisclosureButton, DisclosurePanel, Menu, MenuButton, MenuItem, MenuItems } from '@headlessui/react'
 import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
+import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 const navigation = [
@@ -13,6 +14,8 @@ function classNames(...classes) {
 }
 
 export default function MtsNavbar() {
+    const dispatch = useDispatch();
+
     return (
         <Disclosure as="nav" className="bg-gray-800">
             <div className="mx-auto max-w-7xl px-2 sm:px-6 lg:px-8">
@@ -63,7 +66,7 @@ export default function MtsNavbar() {
                                     <span className="sr-only">Open user menu</span>
                                     <img
                                         alt=""
-                                         src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                        src="https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
                                         className="size-8 rounded-full"
                                     />
                                 </MenuButton>
@@ -89,8 +92,9 @@ export default function MtsNavbar() {
                                     </a>
                                 </MenuItem>
                                 <MenuItem>
-                                    {/* dummy link for simulating logout functionality  */}
-                                    <Link to='/'
+                                    {/* dummy API call for simulating logout functionality  */}
+                                    <Link
+                                        onClick={(e)=>dispatch(logOutAsync())}
                                         className="block px-4 py-2 text-sm text-gray-700 data-[focus]:bg-gray-100 data-[focus]:outline-none"
                                     >
                                         Sign out
