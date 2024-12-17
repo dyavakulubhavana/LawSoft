@@ -117,6 +117,28 @@
         "homeState": "West Bengal",
         "pinCode": "736176"
       }
+    },
+    {
+      "id": "3b71",
+      "name": "Nandodular Das",
+      "mobileNo": "7550924264",
+      "email": "nanda@gmail.com",
+      "regNo": "112233",
+      "practiceCourt": "High Court",
+      "PeferDomain": "Civil",
+      "practiceCity": "Delhi",
+      "practiceYear": "4",
+      "password": "Ased1234",
+      "about": "Nandadulal is a very proffesional lawyer of very exprienced and motivated to won the client case",
+      "photo": {
+        "0": {}
+      },
+      "address": {
+        "streetAddress": "Sahebganj, Dinhatat, Coochbehar, West Bengal",
+        "city": "Kolkata",
+        "homeState": "West Bengal",
+        "pinCode": "736176"
+      }
     }
   ]
 }
