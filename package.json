@@ -35,5 +35,10 @@
     "postcss": "^8.4.49",
     "tailwindcss": "^3.4.15",
     "vite": "^5.4.11"
-  }
+  },
+  "description": "**LawSoft** is a MERN stack-based web application designed to simplify and modernize legal processes by bringing them online. It enables clients to file petitions, search for lawyers, and attend hearings online. Lawyers and judges can manage cases, submit documents, and conduct hearings efficiently through the platform. The system ensures fairness with automatic judge assignment and offers features like eKYC, document management, and a secure case library.",
+  "main": "postcss.config.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
